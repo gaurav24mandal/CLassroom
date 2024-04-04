@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Check marks</title>
+    </head>
+    <body>
+        <p>Found a bug? <a href="mailto:gauravmandal97255@gmail.com">Inform</a> the developer.</p>
+        <% for(let i=0; i<submissions.length; i++) { %>
+            <p>Assignemnt ID: <%= submissions[i].assignmentID %></p>
+            <p>Link: <em style="color: rgb(35, 112, 201)"><%= submissions[i].link %></em></p>
+            <p>Marks: <%= submissions[i].marks %></p>
+            <hr>
+        <% } %>
+    </body>
+</html>

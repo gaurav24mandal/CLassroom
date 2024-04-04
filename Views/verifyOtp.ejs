@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>E-mail verification</title>
+    </head>
+    <body>
+        <p style="color: red;"><%= message %></p>
+        <p>Check your email for the OTP and enter it below.</p>
+        <form action=<%= route %> method="post">
+            <input type="text" name="newOTP" placeholder="OTP">
+            <button type="submit">Verify</button>
+        </form>
+        <br><p>Found a bug? <a href="mailto:bluefoxdevs@gmail.com">Inform</a> the developer.</p>
+    </body>
+</html>

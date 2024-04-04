@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Submissions list</title>
+    </head>
+    <body>
+        <h2>Title: <%= assignment.title %></h2>
+        <p>Description: <%= assignment.description %></p>
+        <br>
+        <p>Found a bug? <a href="mailto:bluefoxdevs@gmail.com">Inform</a> the developer.</p>
+        <hr>
+        <% for(let i=0; i<submissions.length; i++) { %>
+            <hr>
+            <p>Student ID: <%= submissions[i].studentID %></p>
+            <p>Link: <em style="color: rgb(35, 112, 201);"><%= submissions[i].link %></em></p>
+            <p>Marks: <%= submissions[i].marks %></p>
+            <p>Award marks (Out of 10):</p>
+            <form action=<%= "/submission/evaluate/"+submissions[i]._id %> method="post">
+                <input type="text" name="marks" placeholder="Marks">
+                <button type="submit">Add marks</button>
+            </form>
+        <% } %>
+    </body>
+</html>

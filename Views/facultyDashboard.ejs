@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Faculty Dashboard</title>
+    </head>
+    <body>
+        <h1>Login successful</h1>
+        <p>Logged in as <em>Faculty.</em></p>
+        <p>Welcome <%= name %>.</p>
+        <a style="color: green;" href="/faculty/logout">Logout</a>
+        <p>Found a bug? <a href="mailto:bluefoxdevs@gmail.com">Inform</a> the developer.</p>
+        <hr>
+        <p style="color: red;"><%= message %></p>
+        <h2>Create a classroom</h2>
+        <form action="/faculty/classroom" method="post">
+            <input type="text" name="classroomName" placeholder="Name of the Classroom"><br>
+            <textarea name="classroomDescription" placeholder="Description of the Classroom" cols="30" rows="10"></textarea><br>
+            <button type="submit">Create Classroom</button>
+        </form>
+        <hr>
+        <h3>List of classrooms</h3>
+        <% for(let i=0; i<classrooms.length; i++) { %>
+            <h4><%= i+1 %>. <%= classrooms[i].name %></h4>
+            <p><%= classrooms[i].description %></p>
+            <a href=<%= "/classroom/faculty/"+classrooms[i]._id %>>View classroom</a>
+        <% } %>
+    </body>
+</html>
